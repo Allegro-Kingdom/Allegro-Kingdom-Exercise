@@ -9,14 +9,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class CoinPickup : MonoBehaviour {
 
     public bool playSpawnSoundAtSpawn = true;
     public AK.Wwise.Event spawnSound;
+	AudioSource audioData;
+
+	private void Awake()
+    {
+		audioData = GetComponent<AudioSource>();
+    }
 
 	void Start(){
         if (playSpawnSoundAtSpawn){
             spawnSound.Post(gameObject);
+			audioData.Play(0);
         }
 	}
 

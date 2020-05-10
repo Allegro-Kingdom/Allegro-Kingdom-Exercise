@@ -14,6 +14,15 @@ public class AdventuressAnimationEventHandler : MonoBehaviour
     public AK.Wwise.Event GetItem = new AK.Wwise.Event();
     public AK.Wwise.Trigger GetItemStinger = new AK.Wwise.Trigger();
 
+    AudioSource audioData;
+    public AudioClip clip1;
+    public AudioClip clip2;
+    public AudioClip clip3;
+    public AudioClip clip4;
+    public AudioClip clip5;
+    public AudioClip clip6;
+    public AudioClip attack;
+
     [Header("Object Links")]
     [SerializeField]
     private Animator playerAnimator;
@@ -51,12 +60,18 @@ public class AdventuressAnimationEventHandler : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        audioData = GetComponent<AudioSource>();
+    }
 
     void enableWeaponCollider()
     {
         if (PlayerManager.Instance != null && PlayerManager.Instance.equippedWeaponInfo != null)
         {
             PlayerManager.Instance.equippedWeaponInfo.EnableHitbox();
+            //audioData.clip = AttackState;
+            //audioData.Play(0);
         }
     }
 
@@ -66,7 +81,6 @@ public class AdventuressAnimationEventHandler : MonoBehaviour
         {
             PlayerManager.Instance.equippedWeaponInfo.DisableHitbox();
         }
-
     }
 
     void ScreenShake()
@@ -82,6 +96,21 @@ public class AdventuressAnimationEventHandler : MonoBehaviour
             if (!PlayerManager.Instance.inAir && !onCooldown)
             {
                 Vector3 particlePosition;
+                int rand = Random.Range(0, 7);
+                if (rand < 1)
+                    audioData.clip = clip1;
+                else if (rand < 2)
+                    audioData.clip = clip2;
+                else if (rand < 3)
+                    audioData.clip = clip3;
+                else if (rand < 4)
+                    audioData.clip = clip4;
+                else if (rand < 5)
+                    audioData.clip = clip5;
+                else if (rand < 6)
+                    audioData.clip = clip6;
+
+                audioData.Play(0);
 
                 if (side == FootSide.left )
                 {

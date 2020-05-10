@@ -19,6 +19,13 @@ public class PlayerManager : Singleton<PlayerManager>
 
     protected PlayerManager() { }
 
+    [Header("-- Audio --")]
+    AudioSource audioData;
+    public AudioClip closeSound;
+    public AudioClip openSound;
+    public AudioClip scrollSound;
+    public AudioClip selectSound;
+
     [Header("-- Wwise --")]
     public AK.Wwise.Event Health = new AK.Wwise.Event();
     public AK.Wwise.Trigger Death = new AK.Wwise.Trigger();
@@ -140,6 +147,7 @@ public class PlayerManager : Singleton<PlayerManager>
 
     private void Start()
     {
+        audioData = GetComponent<AudioSource>();
         //Equip starting weapon
         if (startingWeapon != null)
         {
@@ -444,6 +452,8 @@ public class PlayerManager : Singleton<PlayerManager>
                 if (OnNewWeaponPickedUp != null)
                 {
                     OnNewWeaponPickedUp();
+                    audioData.clip = selectSound;
+                    audioData.Play(0);
 
                     if (!pickedUpWeapons.Contains(weaponType))
                     {

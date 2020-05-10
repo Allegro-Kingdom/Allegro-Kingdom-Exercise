@@ -28,6 +28,8 @@ public class Weapon : MonoBehaviour, IInteractable
     public bool equipped = false;
     public bool playerWeapon = false;
 
+    AudioSource audioData;
+
     [Header("Weapon Objects")]
     public GameObject prefab;
     public Collider hitbox;
@@ -63,6 +65,7 @@ public class Weapon : MonoBehaviour, IInteractable
     {
         //Reset list of already hit GameObjects (since this is a new swing)
         alreadyHitObjects.Clear();
+        audioData.Play(0);
         hitbox.enabled = true;
     }
 
@@ -96,6 +99,7 @@ public class Weapon : MonoBehaviour, IInteractable
 
     void Start()
     {
+        audioData = GetComponent<AudioSource>();
         prefab = gameObject;
         if (!playerWeapon)
         {
@@ -193,7 +197,7 @@ public class Weapon : MonoBehaviour, IInteractable
                         if (thisSwitch != (uint)sm.material.Id)
                         {
                             sm.material.SetValue(transform.parent.gameObject); // Set Impact Material
-                                                                               //print("New Impact Material: "+ sm.gameObject.name);
+                            print("New Impact Material: "+ sm.gameObject.name);
                         }
                     }
 
