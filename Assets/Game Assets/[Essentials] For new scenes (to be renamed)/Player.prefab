@@ -639,6 +639,7 @@ MonoBehaviour:
   clip4: {fileID: 8300000, guid: 040e812936f26484d9955ce383d773e4, type: 3}
   clip5: {fileID: 8300000, guid: 88dd9f495053dc246ac107240f460492, type: 3}
   clip6: {fileID: 8300000, guid: c319f748c85a58c4ea41b27469a928dd, type: 3}
+  pickup: {fileID: 8300000, guid: 4a221fcc0ebfbe74ea9835dbd8fad062, type: 3}
   playerAnimator: {fileID: 95636515816211616}
   runParticles: {fileID: 1000011273223974, guid: a676ddf5cf5fc448fa366c97e12f0f69,
     type: 3}
