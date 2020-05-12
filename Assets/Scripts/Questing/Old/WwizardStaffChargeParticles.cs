@@ -14,10 +14,6 @@ public class WwizardStaffChargeParticles : MonoBehaviour
     public AudioClip charge;
     public AudioClip endCharge;
 
-    [Header("Wwise")]
-    public AK.Wwise.Event StartChargeEvent;
-    public AK.Wwise.Event EndChargeEvent;
-
     [Header("Line Renderer Settings")]
     public LineRenderer lineRenderer;
 
@@ -51,7 +47,6 @@ public class WwizardStaffChargeParticles : MonoBehaviour
 
         if (endPoint != null)
         {
-            StartChargeEvent.Post(endPoint.gameObject);
             audioData.clip = charge;
             audioData.Play(0);
             chargeRoutine = AnimatePoints();
@@ -90,7 +85,6 @@ public class WwizardStaffChargeParticles : MonoBehaviour
 
     void OnDisable()
     {
-        EndChargeEvent.Post(endPoint.gameObject);
         audioData.clip = endCharge;
         audioData.Play(0);
         StopCoroutine(chargeRoutine);

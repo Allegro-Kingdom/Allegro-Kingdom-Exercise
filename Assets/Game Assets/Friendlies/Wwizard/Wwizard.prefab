@@ -242,16 +242,6 @@ MonoBehaviour:
   startPosition: {x: 0, y: 0, z: 0}
   daytime: 0
   AttackType: 0
-  PoofGimmickSound:
-    idInternal: 1035173718
-    valueGuidInternal: 6f80b0c72ee41348ada18f99bdd38112
-    WwiseObjectReference: {fileID: 11400000, guid: adae63e49833c344b97f237f791a6f39,
-      type: 2}
-  StaffHitGroundSound:
-    idInternal: -1437205764
-    valueGuidInternal: fec33c04ca761644a960616573cb563d
-    WwiseObjectReference: {fileID: 11400000, guid: 54012c44549fd7a4cb2c7bab6bb612f1,
-      type: 2}
   matChecker: {fileID: 114724201675619454}
   Gimmick1PoofParticles: {fileID: 1759330208133708, guid: 95e1666ecf8cb4807aaddf45ae55204c,
     type: 3}
@@ -422,6 +412,7 @@ MonoBehaviour:
     valueGuidInternal: 66e98d277c6b2a469e4ca610fd7806cb
     WwiseObjectReference: {fileID: 11400000, guid: 1734316af2b311d41a265ed8d9ddca38,
       type: 2}
+  questComplete: {fileID: 0}
   StartQuestLineOnStart: 1
   Quests:
   - {fileID: 0}
@@ -529,7 +520,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -2563,14 +2554,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charge: {fileID: 8300000, guid: bce8b3e94d8ad4f4e9accdcbe553f223, type: 3}
   endCharge: {fileID: 8300000, guid: 73083f44c5037a44d92559978a584ac1, type: 3}
-  StartChargeEvent:
-    idInternal: 1817926999
-    valueGuidInternal: 48e913ca8afc864ca933feb51278a585
-    WwiseObjectReference: {fileID: 0}
-  EndChargeEvent:
-    idInternal: 547945861
-    valueGuidInternal: b595a0ac87736b4cac03d2462587900a
-    WwiseObjectReference: {fileID: 0}
   lineRenderer: {fileID: 120399247484619230}
   refreshSpeed: 0.02
   yOffsets:
@@ -2633,7 +2616,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 15
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -2668,7 +2651,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
