@@ -21,7 +21,7 @@ public class AdventuressAnimationEventHandler : MonoBehaviour
     public AudioClip clip4;
     public AudioClip clip5;
     public AudioClip clip6;
-    public AudioClip attack;
+    public AudioClip pickup;
 
     [Header("Object Links")]
     [SerializeField]

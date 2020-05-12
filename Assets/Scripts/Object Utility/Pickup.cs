@@ -31,6 +31,9 @@ public class Pickup : MonoBehaviour, IInteractable
 	[Space(15f)]
 	public AK.Wwise.Switch PickupType;
 
+	AudioSource audioData;
+	AudioClip clip;
+
 	#region private variables
 	private float randomOffset;
 	private bool playerInTrigger;
@@ -47,6 +50,8 @@ public class Pickup : MonoBehaviour, IInteractable
 	void Start()
 	{
 		randomOffset = Random.Range(0, 2 * Mathf.PI);
+		audioData = GameObject.Find("Player").GetComponent<AudioSource>();
+		clip = GameObject.Find("Player").GetComponent<AdventuressAnimationEventHandler>().pickup;
 	}
 
 	void OnEnable()
@@ -190,9 +195,10 @@ public class Pickup : MonoBehaviour, IInteractable
 			OnInteraction.Invoke();
 
 			if (interactionSound)
-			{
-				
+			{				
 				PickUpEvent.Post(gameObject);
+				audioData.clip = clip;
+				audioData.Play(0);
 			}
 			if (pickupParticles != null)
 			{
