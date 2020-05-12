@@ -4,7 +4,7 @@
 //
 ////////////////////////////////////////////////////////////////////////
 
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
@@ -26,6 +26,8 @@ public class WorldTeleporter : MonoBehaviour
     [Header("VFX")]
     public GameObject teleportParticles;
     public UnityEvent OnTeleport;
+
+    public AudioSource aud;
 
     private UnityAction<int> teleport;
 
@@ -90,6 +92,9 @@ public class WorldTeleporter : MonoBehaviour
                 GameObject go = Instantiate(teleportParticles, PlayerManager.Instance.player.transform.position, Quaternion.identity) as GameObject;
                 Destroy(go, 5f);
             }
+
+            //Play sound when teleporting
+            aud.Play();
         }
     }
 }
