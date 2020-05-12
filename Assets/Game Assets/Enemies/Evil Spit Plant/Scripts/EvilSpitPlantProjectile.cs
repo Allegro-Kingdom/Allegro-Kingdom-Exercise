@@ -28,6 +28,10 @@ public class EvilSpitPlantProjectile : MonoBehaviour
     [HideInInspector]
     public GameObject parent;
 
+    AudioSource audioData;
+    public AudioClip hitSound;
+    public AudioClip missSound;
+
     public AK.Wwise.Event ImpactSound = new AK.Wwise.Event();
     public AK.Wwise.Event NoImpactSound = new AK.Wwise.Event();
 
@@ -37,6 +41,11 @@ public class EvilSpitPlantProjectile : MonoBehaviour
     private bool isExploding;
     private IEnumerator movementRoutine;
     #endregion
+
+    void Awake()
+    {
+        audioData = GetComponent<AudioSource>();
+    }
 
     void OnEnable()
     {
@@ -138,10 +147,14 @@ public class EvilSpitPlantProjectile : MonoBehaviour
             if (hitSomething)
             {
                 ImpactSound.Post(go.gameObject);
+                audioData.clip = hitSound;
+                audioData.Play(0);
             }
             else
             {
                 NoImpactSound.Post(go.gameObject);
+                audioData.clip = missSound;
+                audioData.Play(0);
             }
 
             Destroy(go, 5f);
