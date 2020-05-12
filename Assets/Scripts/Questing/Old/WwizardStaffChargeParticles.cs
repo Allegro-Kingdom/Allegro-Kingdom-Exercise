@@ -10,6 +10,10 @@ using UnityEngine;
 
 public class WwizardStaffChargeParticles : MonoBehaviour
 {
+    AudioSource audioData;
+    public AudioClip charge;
+    public AudioClip endCharge;
+
     [Header("Wwise")]
     public AK.Wwise.Event StartChargeEvent;
     public AK.Wwise.Event EndChargeEvent;
@@ -33,6 +37,11 @@ public class WwizardStaffChargeParticles : MonoBehaviour
     private IEnumerator chargeRoutine;
     #endregion
 
+    void Awake()
+    {
+        audioData = GetComponent<AudioSource>();
+    }
+
     void OnEnable()
     {
         if (lineRenderer == null)
@@ -43,6 +52,8 @@ public class WwizardStaffChargeParticles : MonoBehaviour
         if (endPoint != null)
         {
             StartChargeEvent.Post(endPoint.gameObject);
+            audioData.clip = charge;
+            audioData.Play(0);
             chargeRoutine = AnimatePoints();
             StartCoroutine(chargeRoutine);
 
@@ -80,6 +91,8 @@ public class WwizardStaffChargeParticles : MonoBehaviour
     void OnDisable()
     {
         EndChargeEvent.Post(endPoint.gameObject);
+        audioData.clip = endCharge;
+        audioData.Play(0);
         StopCoroutine(chargeRoutine);
         if (lineRenderer != null)
         {

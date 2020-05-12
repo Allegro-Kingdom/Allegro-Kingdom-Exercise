@@ -22,6 +22,8 @@ public class WwizardAI : Creature
     [Header("Charge Particles Settings")]
     public WwizardStaffChargeParticles chargeParticles;
 
+    AudioSource audioData;
+
     [Header("NavMesh Stuff")]
     public NavMeshAgent navMeshAgent;
     public NavMeshObstacle navMeshObstacle;
@@ -33,6 +35,11 @@ public class WwizardAI : Creature
     private readonly int randomTalkHash = Animator.StringToHash("RandomTalk");
 
     #endregion
+
+    void Awake()
+    {
+        audioData = GetComponent<AudioSource>();
+    }
 
     public void TalkAnimation_CalculateNew()
     {
@@ -59,6 +66,7 @@ public class WwizardAI : Creature
         {
             GameObject p = Instantiate(Gimmick1PoofParticles, Gimmick1PoofTransform.transform.position + Gimmick1Displacement, Quaternion.identity) as GameObject;
             PoofGimmickSound.Post(p);
+            audioData.Play(0);
             Destroy(p, 5f);
         }
     }
