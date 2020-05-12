@@ -78,6 +78,16 @@ public class Inventory : MonoBehaviour
     private Image MarkerImage_Row3;
     #endregion
 
+    public AudioSource openInventory;
+    public AudioSource closeInventory;
+    public AudioSource scrollInventory;
+    public AudioSource selectInventory;
+
+    private void Start()
+    {
+
+    }
+
     private void OnDestroy()
     {
         InputManager.OnInventoryDown -= OpenInventory;
@@ -708,6 +718,8 @@ public class Inventory : MonoBehaviour
 
     void OpenInventory()
     {
+        openInventory.Play();
+
         if (!Menu.isOpen && DialogueManager.Instance.Dialogue.Count < 1 && !InventoryIsOut)
         {
             canvasGroup.interactable = true;
@@ -730,6 +742,8 @@ public class Inventory : MonoBehaviour
 
     void CloseInventory()
     {
+        closeInventory.Play();
+
         if (InventoryIsOut)
         {
             canvasGroup.interactable = false;
@@ -790,6 +804,7 @@ public class Inventory : MonoBehaviour
     public void ButtonIncrement(int layer)
     {
         InventorySelectSound.Post(gameObject);
+        scrollInventory.Play();
 
         if (Panel.activeInHierarchy && hasShown)
         {
@@ -814,6 +829,8 @@ public class Inventory : MonoBehaviour
     public void InversedIncrement(int layer)
     {
         InventorySelectSound.Post(gameObject);
+        scrollInventory.Play();
+
         if (Panel.activeInHierarchy && hasShown)
         {
             if (layer == 0)

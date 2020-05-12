@@ -13,6 +13,8 @@ using QuestSystem;
 public class QuestUpdatedVisuals : MonoBehaviour
 {
     public float ShowDuration = 6f;
+    public AudioSource openRoll;
+    public AudioSource closeRoll;
 
     #region private variables
     [SerializeField]

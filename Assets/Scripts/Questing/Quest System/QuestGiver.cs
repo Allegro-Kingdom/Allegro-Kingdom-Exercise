@@ -23,6 +23,8 @@ namespace QuestSystem
         public AK.Wwise.Event QuestlineCompleteEvent;
         //public AK.Wwise.Event QuestlineAdvancedEvent;
 
+        public AudioSource questComplete;
+
         public bool StartQuestLineOnStart = true;
         public List<Quest> Quests;
 
@@ -87,11 +89,13 @@ namespace QuestSystem
             if (currentQuestIdx < Quests.Count)
             {
                 QuestlineCompleteEvent.Post(gameObject);
+                questComplete.Play();
                 InitializeQuest(currentQuestIdx);
             }
             else
             {
                 QuestlineCompleteEvent.Post(gameObject);
+                questComplete.Play();
                 if (OnQuestlineComplete != null)
                 {
                     OnQuestlineComplete(this);
