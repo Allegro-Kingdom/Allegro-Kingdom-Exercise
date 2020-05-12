@@ -5813,9 +5813,9 @@ MonoBehaviour:
   shootParticles: {fileID: 1000011806222222, guid: ea09e662b30aa4386af6bd74e3567ff7,
     type: 3}
   spitBulletSpawnPoint: {fileID: 1000010253179078}
-  deathSound: {fileID: 0}
-  chargeSound: {fileID: 0}
-  shootSound: {fileID: 0}
+  death_Sound: {fileID: 8300000, guid: 8a3cf78bad02b4a4aac284596fddfd31, type: 3}
+  charge_Sound: {fileID: 8300000, guid: d35f45c15cb02bb42aeb280229458f58, type: 3}
+  shoot_Sound: {fileID: 8300000, guid: c746b57fe336f9f4ca847cf8f9ed83e0, type: 3}
   AttackSound:
     idInternal: 1042419433
     valueGuidInternal: 0a10915fa255464198da46a45310c142
