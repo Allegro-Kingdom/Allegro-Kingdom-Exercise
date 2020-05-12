@@ -15,6 +15,13 @@ public class EvilHeadAI : Creature
     public GameObject deathFX;
     public GameObject keepOnDeath;
 
+    AudioSource audioData;
+    public AudioClip hoverSound_Start;
+    public AudioClip hoverSound_End;
+    public AudioClip bite_Sound;
+    public AudioClip charge_Sound;
+    public AudioClip telegraph_Sound;
+
     [Header("Wwise")]
     public AK.Wwise.RTPC MovementRTPC;
     public AK.Wwise.Event HoverSoundStart;
@@ -42,11 +49,15 @@ public class EvilHeadAI : Creature
         {
             anim = GetComponent<Animator>();
         }
+
+        audioData = GetComponent<AudioSource>();
     }
 
     public override void Start(){
 		base.Start();
         HoverSoundStart.Post(this.gameObject);
+        audioData.clip = hoverSound_Start;
+        audioData.Play(0);
 	}
 
     public override void OnSpotting()
@@ -78,6 +89,8 @@ public class EvilHeadAI : Creature
         targetLocation = targetOfNPC.transform.position + Vector3.up;
         StartCoroutine(RotateTowardsTarget(targetLocation, 1f));
         TelegraphSound.Post(gameObject);
+        audioData.clip = telegraph_Sound;
+        audioData.Play(0);
     }
 
 
@@ -119,6 +132,8 @@ public class EvilHeadAI : Creature
         //print(Time.realtimeSinceStartup + ": ChargeTowardsPlayer");
         TelegraphSound.Stop(gameObject,0, AkCurveInterpolation.AkCurveInterpolation_Linear);
         ChargeSound.Post(gameObject);
+        audioData.clip = charge_Sound;
+        audioData.Play(0);
 
         Vector3 currentPosition = transform.position;
         Vector3 destination = targetLocation + ((targetLocation) - currentPosition).normalized * 2f;
@@ -165,6 +180,8 @@ public class EvilHeadAI : Creature
         SetMovementSpeed(0f);
         //print(Time.realtimeSinceStartup + ": Explode");
         HoverSoundEnd.Post(this.gameObject);
+        audioData.clip = hoverSound_End;
+        audioData.Play(0);
 
         GameObject fx = (GameObject)Instantiate(deathFX, transform.position, Quaternion.identity);
         Destroy(fx, 5f);
@@ -190,5 +207,7 @@ public class EvilHeadAI : Creature
     public void PlayBiteSound()
     {
         BiteSound.Post(this.gameObject);
+        audioData.clip = bite_Sound;
+        audioData.Play(0);
     }
 }

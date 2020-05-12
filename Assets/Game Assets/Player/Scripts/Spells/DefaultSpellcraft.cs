@@ -37,6 +37,10 @@ public class DefaultSpellcraft : MonoBehaviour
 
     public int SpellSelect = 0;
 
+    AudioSource audioData;
+    public AudioClip castSound;
+    public AudioClip chargeStartSound;
+    public AudioClip chargeStopSound;
 
     [Header("WWISE")]
     public AK.Wwise.Event SpellCast = new AK.Wwise.Event();
@@ -54,11 +58,17 @@ public class DefaultSpellcraft : MonoBehaviour
     private readonly int chargingMagicHash = Animator.StringToHash("ChargingMagic");
     #endregion
 
+    void Awake()
+    {
+        audioData = GetComponent<AudioSource>();
+    }
+
     public void EnableMagic()
     {
-
         SpellChargeLevel.SetGlobalValue(0f);
         SpellChargeStart.Post(gameObject);
+        audioData.clip = chargeStartSound;
+        audioData.Play(0);
 
         InputManager.OnUseDown += OnCharge;
         InputManager.OnUseUp += OffCharge;
@@ -67,6 +77,8 @@ public class DefaultSpellcraft : MonoBehaviour
     public void DisableMagic()
     {
         SpellChargeStop.Post(gameObject);
+        audioData.clip = chargeStopSound;
+        audioData.Play(0);
         Spellcraft[SpellSelect].Charge.OnCharge[0].Deactivate();
         InputManager.OnUseDown -= OnCharge;
         InputManager.OnUseUp -= OffCharge;
@@ -183,6 +195,8 @@ public class DefaultSpellcraft : MonoBehaviour
                     // SPELL SOUND
                     SpellChargeLevel.SetGlobalValue(Spellcraft[SpellSelect].Charge.ChargeAmount * 100);
                     SpellCast.Post(this.gameObject);
+                    audioData.clip = castSound;
+                    audioData.Play(0);
                 }
             }
         }
