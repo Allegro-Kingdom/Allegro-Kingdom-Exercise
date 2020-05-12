@@ -23,11 +23,21 @@ public class EvilSpitPlantAI : Creature
     private readonly int isAliveHash = Animator.StringToHash("IsAlive");
     #endregion
 
+    AudioSource audioData;
+    public AudioClip deathSound;
+    public AudioClip chargeSound;
+    public AudioClip shootSound;
+
     [Header("WWISE")]
     public AK.Wwise.Event AttackSound = new AK.Wwise.Event();
     public AK.Wwise.Event ChargeSound = new AK.Wwise.Event();
     public AK.Wwise.Event Death_Headfall = new AK.Wwise.Event();
     public AK.Wwise.Event asdasdasfasda;
+
+    void Awake()
+    {
+        //audioData = GetComponent<AudioSource>();
+    }
 
     public override void OnSpotting()
     {
