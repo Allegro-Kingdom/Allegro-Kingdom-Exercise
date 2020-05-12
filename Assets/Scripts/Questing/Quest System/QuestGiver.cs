@@ -4,7 +4,7 @@
 //
 ////////////////////////////////////////////////////////////////////////
 
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,6 +22,8 @@ namespace QuestSystem
         public AK.Wwise.RTPC QuestlineProgressionRTPC;
         public AK.Wwise.Event QuestlineCompleteEvent;
         //public AK.Wwise.Event QuestlineAdvancedEvent;
+
+        public AudioSource questComplete;
 
         public bool StartQuestLineOnStart = true;
         public List<Quest> Quests;
@@ -52,7 +54,7 @@ namespace QuestSystem
             Quest currentQuest = Quests[questIdx];
             yield return currentQuest.InitializeQuest();
             currentQuest.OnQuestComplete += AdvanceQuestLine;
-            SetDialogue(currentQuest.GetDialogue()); 
+            SetDialogue(currentQuest.GetDialogue());
 
             if (OnNewQuest != null)
             {
@@ -78,7 +80,7 @@ namespace QuestSystem
             initializingNewQuest = true;
             quest.OnQuestComplete -= AdvanceQuestLine;
 
-            if(OnQuestCompleted != null)
+            if (OnQuestCompleted != null)
             {
                 OnQuestCompleted(quest);
             }
@@ -87,11 +89,13 @@ namespace QuestSystem
             if (currentQuestIdx < Quests.Count)
             {
                 QuestlineCompleteEvent.Post(gameObject);
+                questComplete.Play();
                 InitializeQuest(currentQuestIdx);
             }
             else
             {
                 QuestlineCompleteEvent.Post(gameObject);
+                questComplete.Play();
                 if (OnQuestlineComplete != null)
                 {
                     OnQuestlineComplete(this);
@@ -144,7 +148,7 @@ namespace QuestSystem
             //yield return InitializeQuest(currentQuestIdx);
 
             //new
-            if(sign < 0)
+            if (sign < 0)
             {
                 Debug.Log("Resetting quest " + currentQuestIdx);
                 yield return Quests[currentQuestIdx].ResetQuest();

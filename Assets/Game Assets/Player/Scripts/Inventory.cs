@@ -4,7 +4,7 @@
 //
 ////////////////////////////////////////////////////////////////////////
 
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -77,6 +77,16 @@ public class Inventory : MonoBehaviour
     private Image MarkerImage_Row2;
     private Image MarkerImage_Row3;
     #endregion
+
+    public AudioSource openInventory;
+    public AudioSource closeInventory;
+    public AudioSource scrollInventory;
+    public AudioSource selectInventory;
+
+    private void Start()
+    {
+
+    }
 
     private void OnDestroy()
     {
@@ -553,7 +563,8 @@ public class Inventory : MonoBehaviour
     {
         for (int i = IO.Items.Count - 1; i > -1; i--)
         {
-            if(IO.Items[i] == null || (IO.Items[i] != null && !IO.Items[i].GetComponent<ShowInInventory>().VisibleInInventory)){
+            if (IO.Items[i] == null || (IO.Items[i] != null && !IO.Items[i].GetComponent<ShowInInventory>().VisibleInInventory))
+            {
                 IO.Items.RemoveAt(i);
             }
         }
@@ -708,6 +719,8 @@ public class Inventory : MonoBehaviour
 
     void OpenInventory()
     {
+        openInventory.Play();
+
         if (!Menu.isOpen && DialogueManager.Instance.Dialogue.Count < 1 && !InventoryIsOut)
         {
             canvasGroup.interactable = true;
@@ -730,6 +743,8 @@ public class Inventory : MonoBehaviour
 
     void CloseInventory()
     {
+        closeInventory.Play();
+
         if (InventoryIsOut)
         {
             canvasGroup.interactable = false;
@@ -790,6 +805,7 @@ public class Inventory : MonoBehaviour
     public void ButtonIncrement(int layer)
     {
         InventorySelectSound.Post(gameObject);
+        scrollInventory.Play();
 
         if (Panel.activeInHierarchy && hasShown)
         {
@@ -814,6 +830,8 @@ public class Inventory : MonoBehaviour
     public void InversedIncrement(int layer)
     {
         InventorySelectSound.Post(gameObject);
+        scrollInventory.Play();
+
         if (Panel.activeInHierarchy && hasShown)
         {
             if (layer == 0)
@@ -873,7 +891,7 @@ public class Inventory : MonoBehaviour
             {
                 UIhelp.SetActive(true);
             }
-            
+
             for (int b = 0; b < buttons.Length; b++)
             {
                 if (increment % 2 == 0)

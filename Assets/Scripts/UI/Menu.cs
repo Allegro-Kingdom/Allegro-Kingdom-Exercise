@@ -4,7 +4,7 @@
 //
 ////////////////////////////////////////////////////////////////////////
 
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -14,6 +14,9 @@ public class Menu : MonoBehaviour
 {
     public static bool isOpen = false;
     public static MenuStateEvent OnMenuStateChange;
+
+    public AudioSource openSound;
+    public AudioSource closeSound;
 
     [Header("Wwise")]
     public AK.Wwise.RTPC MenuRTPC;
@@ -31,7 +34,8 @@ public class Menu : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P) && GetMouseWithP) {
+        if (Input.GetKeyDown(KeyCode.P) && GetMouseWithP)
+        {
             PlayerManager.Instance.cameraScript.FreezeAndShowCursor(true, gameObject);
         }
     }
@@ -55,6 +59,7 @@ public class Menu : MonoBehaviour
             if (menuOpen)
             {
                 MenuOpenSound.Post(gameObject);
+                openSound.Play();
                 MenuRTPC.SetGlobalValue(100f);
                 GameManager.Instance.gameSpeedHandler.PauseGameSpeed(gameObject.GetInstanceID());
                 GameManager.Instance.BlurCam();
@@ -68,6 +73,7 @@ public class Menu : MonoBehaviour
             else
             {
                 MenuCloseSound.Post(gameObject);
+                closeSound.Play();
                 MenuRTPC.SetGlobalValue(0f);
                 GameManager.Instance.gameSpeedHandler.UnPauseGameSpeed(gameObject.GetInstanceID());
                 GameManager.Instance.UnBlurCam();
