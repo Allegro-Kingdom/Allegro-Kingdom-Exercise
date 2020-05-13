@@ -674,7 +674,8 @@ AudioSource:
   m_GameObject: {fileID: 1000011631600178}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4905397720515765631, guid: 369bb915bc6475240b6ced408ca8e371,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: f77a7c281e223e8429c9f0b433e38bf8, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -5851,6 +5852,9 @@ MonoBehaviour:
     ImpactVelocity: 40
     IsAvailable: 0
   SpellSelect: 0
+  castSound: {fileID: 0}
+  chargeStartSound: {fileID: 0}
+  chargeStopSound: {fileID: 0}
   SpellCast:
     idInternal: -1657715331
     valueGuidInternal: 568df393099a4342a38e8d7819014897

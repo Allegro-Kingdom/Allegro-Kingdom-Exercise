@@ -369,9 +369,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1024290128613636
 GameObject:
   m_ObjectHideFlags: 0
@@ -1600,9 +1598,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1046010929885558
 GameObject:
   m_ObjectHideFlags: 0
@@ -2247,9 +2243,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1063073493763730
 GameObject:
   m_ObjectHideFlags: 0
@@ -2805,9 +2799,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1075443021542826
 GameObject:
   m_ObjectHideFlags: 0
@@ -3034,9 +3026,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1077283886752462
 GameObject:
   m_ObjectHideFlags: 0
@@ -4211,9 +4201,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1093821812463402
 GameObject:
   m_ObjectHideFlags: 0
@@ -8049,9 +8037,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1186197647257254
 GameObject:
   m_ObjectHideFlags: 0
@@ -8559,9 +8545,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1197182879237398
 GameObject:
   m_ObjectHideFlags: 0
@@ -9314,9 +9298,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1203017867344020
 GameObject:
   m_ObjectHideFlags: 0
@@ -9751,9 +9733,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1217039655693072
 GameObject:
   m_ObjectHideFlags: 0
@@ -11768,6 +11748,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  aud: {fileID: 0}
 --- !u!114 &114425002030095096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11817,9 +11798,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1252137798341624
 GameObject:
   m_ObjectHideFlags: 0
@@ -12770,15 +12749,15 @@ MonoBehaviour:
   m_FillRect: {fileID: 224607442803426960}
   m_HandleRect: {fileID: 224051337643098436}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 100
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: 100
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114112501358933322}
-        m_MethodName: SetRTPC
+        m_MethodName: SetMusicVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12824,6 +12803,7 @@ MonoBehaviour:
     idInternal: -1652528752
     valueGuidInternal: 6506f311d775004b875101114a8b8bf1
     WwiseObjectReference: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 369bb915bc6475240b6ced408ca8e371, type: 2}
 --- !u!114 &114750073526160284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12853,9 +12833,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1273010052655258
 GameObject:
   m_ObjectHideFlags: 0
@@ -13388,9 +13366,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1286179321020654
 GameObject:
   m_ObjectHideFlags: 0
@@ -14344,15 +14320,15 @@ MonoBehaviour:
   m_FillRect: {fileID: 224983652048203506}
   m_HandleRect: {fileID: 224027454647733462}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 100
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: 100
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114567553145366720}
-        m_MethodName: SetRTPC
+        m_MethodName: SetMasterVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14398,6 +14374,7 @@ MonoBehaviour:
     idInternal: 1333239961
     valueGuidInternal: f3cdc9a257094a4ab327cb3d2b99f39f
     WwiseObjectReference: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 369bb915bc6475240b6ced408ca8e371, type: 2}
 --- !u!114 &114618134497236814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14427,9 +14404,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1317794461065916
 GameObject:
   m_ObjectHideFlags: 0
@@ -15506,9 +15481,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1344016309155878
 GameObject:
   m_ObjectHideFlags: 0
@@ -16081,9 +16054,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1351096433513422
 GameObject:
   m_ObjectHideFlags: 0
@@ -16879,9 +16850,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1365036114527318
 GameObject:
   m_ObjectHideFlags: 0
@@ -18390,9 +18359,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!114 &114503228466089704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19846,9 +19813,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1444383539802416
 GameObject:
   m_ObjectHideFlags: 0
@@ -20669,9 +20634,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1460948547196016
 GameObject:
   m_ObjectHideFlags: 0
@@ -24054,9 +24017,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1538849238083510
 GameObject:
   m_ObjectHideFlags: 0
@@ -25144,9 +25105,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1558307302549896
 GameObject:
   m_ObjectHideFlags: 0
@@ -33217,9 +33176,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1627682604133570
 GameObject:
   m_ObjectHideFlags: 0
@@ -33634,9 +33591,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1636399287956368
 GameObject:
   m_ObjectHideFlags: 0
@@ -33849,9 +33804,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1638711388101982
 GameObject:
   m_ObjectHideFlags: 0
@@ -38390,9 +38343,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1761010085701958
 GameObject:
   m_ObjectHideFlags: 0
@@ -42316,9 +42267,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1892312105917540
 GameObject:
   m_ObjectHideFlags: 0
@@ -43365,9 +43314,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1902507968031182
 GameObject:
   m_ObjectHideFlags: 0
@@ -43790,9 +43737,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1907628233465484
 GameObject:
   m_ObjectHideFlags: 0
@@ -44034,9 +43979,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!114 &114074294171476850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44441,9 +44384,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1921351416696708
 GameObject:
   m_ObjectHideFlags: 0
@@ -48317,9 +48258,7 @@ MonoBehaviour:
     valueGuidInternal: 00000000000000000000000000000000
     WwiseObjectReference: {fileID: 0}
   pointerDownSound: {fileID: 0}
-  pointerUpSound: {fileID: 0}
   pointerEnterSound: {fileID: 0}
-  pointerExitSound: {fileID: 0}
 --- !u!1 &1994448189174656
 GameObject:
   m_ObjectHideFlags: 0

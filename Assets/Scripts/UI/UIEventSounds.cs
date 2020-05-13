@@ -15,9 +15,7 @@ public class UIEventSounds : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public AK.Wwise.Event OnPointerExitSound;
 
     public AudioSource pointerDownSound;
-    public AudioSource pointerUpSound;
     public AudioSource pointerEnterSound;
-    public AudioSource pointerExitSound;
 
     private void Start()
     {
@@ -39,12 +37,10 @@ public class UIEventSounds : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public void OnPointerExit(PointerEventData eventData)
     {
         OnPointerExitSound.Post(gameObject);
-        pointerExitSound.Play();
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         OnPointerUpSound.Post(gameObject);
-        pointerUpSound.Play();
     }
 }

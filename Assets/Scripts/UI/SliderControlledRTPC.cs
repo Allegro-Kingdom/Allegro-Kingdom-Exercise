@@ -5,10 +5,11 @@
 ////////////////////////////////////////////////////////////////////////
 
 ﻿using UnityEngine;
-
+using UnityEngine.Audio;
 public class SliderControlledRTPC : MonoBehaviour
 {
     public AK.Wwise.RTPC RTPC;
+    public AudioMixer audioMixer;
 
     public void SetRTPC(float value)
     {
@@ -16,6 +17,16 @@ public class SliderControlledRTPC : MonoBehaviour
         {
             RTPC.SetGlobalValue(value);
         }
+    }
+
+    public void SetMasterVolume(float value)
+    {
+        audioMixer.SetFloat("masterVolume", value);
+    }
+
+    public void SetMusicVolume(float value)
+    {
+        audioMixer.SetFloat("musicVolume", value);
     }
 
 }
